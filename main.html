@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="./css/style.css" type="text/css">
+    </head>
+    <body>
+        <div class="main">
+            <ul class="navbar">
+                <li class="active" onclick="app.navbarClick(this)">时间转换</li>
+                <li onclick="app.navbarClick(this)">字符串</li>
+                <li onclick="app.navbarClick(this)">URL编码</li>
+                <li onclick="app.navbarClick(this)">JSON转换</li>
+                <li onclick="app.navbarClick(this)">MD5加密</li>
+                <li onclick="app.navbarClick(this)">base64转换</li>
+                <li onclick="app.navbarClick(this)">base64图片转换</li>
+                <li onclick="app.navbarClick(this)">二维码</li>
+                <li onclick="app.navbarClick(this)">翻译</li>
+                <li onclick="app.navbarClick(this)">异或转换</li>
+                <li onclick="app.navbarClick(this)">短网址</li>
+                <li onclick="app.navbarClick(this)">图像处理</li>
+                <li onclick="app.navbarClick(this)">关于...</li>
+            </ul>
+            <div class="navbar_box">
+                <div class="date">
+                    <div class="row">
+                        <label>时间戳　</label>
+                        <input type="text" id="unixtime1" value="" readonly />
+                        <button id="start" onclick="app.startUnixtime()">开　始</button>
+                        <button id="stop" onclick="app.stopUnixtime()">停　止</button>
+                    </div>
+                    <div class="row">
+                        <label>时间戳　</label>
+                        <input type="text" id="unixtime2" value="" placeholder="时间戳（秒）" />
+                        <button onclick="app.formatUnixtime()">格式化 >></button>
+                        <label>日　期　</label>
+                        <input type="text" id="date2" value="" readonly />
+                    </div>
+                    <div class="row">
+                        <label>日　期　</label>
+                        <input type="text" id="date3" value="" placeholder="Y-m-d H:i:s" />
+                        <button onclick="app.formatDate()">转　换 >></button>
+                        <label>时间戳　</label>
+                        <input type="text" id="unixtime3" value="" readonly />
+                    </div>
+                </div>
+                <div class="string">
+                    <div class="row">
+                        <label>字符串长度　</label>
+                        <div class="length">
+                            <textarea></textarea>
+                            <div>
+                                <input type="text" value="总长度" readonly />
+                                <button onclick="app.stringLength(this)"> >> </button>
+                            </div>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <label>字符串替换　</label>
+                        <div class="replace">
+                            <textarea></textarea>
+                            <div>
+                                <input type="text" name="" value="" placeholder="搜索字符" />
+                                <button onclick="app.stringReplace(this)"> >> </button>
+                                <input type="text" name="" value="" placeholder="替换字符" />
+                            </div>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="url dis_n">
+                    <div class="row">
+                        <textarea id="url" placeholder="转换的内容粘贴在这里"></textarea>
+                    </div>
+                    <div class="row">
+                        <button onclick="app.urlEncode()">UrlEncode编码</button>
+                        <button onclick="app.urlDecode()">UrlDecode编码</button>
+                    </div>
+                </div>
+                <div class="json dis_n">
+                    <div class="row">
+                        <textarea id="json" placeholder="转换的内容粘贴在这里"></textarea>
+                    </div>
+                    <div class="row">
+                        <button onclick="app.jsonEncode()">JsonEncode编码</button>
+                        <button onclick="app.jsonDecode()">JsonDecode编码</button>
+                    </div>
+                </div>
+                <div class="md5 dis_n">
+                    <div class="row">
+                        <textarea id="md5" placeholder="加密的内容粘贴在这里"></textarea>
+                    </div>
+                    <div class="row">
+                        <button onclick="app.md5()">MD5加密</button>
+                    </div>
+                </div>
+                <div class="base64 dis_n">
+                    <div class="row">
+                        <textarea id="base64" placeholder="转换的内容粘贴在这里"></textarea>
+                    </div>
+                    <div class="row">
+                        <button onclick="app.base64Encode()">Base64Encode编码</button>
+                        <button onclick="app.base64Decode()">Base64Decode编码</button>
+                    </div>
+                </div>
+                <div class="base64_image dis_n">
+                    <div class="row">
+                        <div class="column">
+                            <div id="image_to_base64"></div>
+                        </div>
+                        <div class="column">
+                            <textarea id="base64_to_image" placeholder="转换的图片base64内容粘贴在这里"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button onclick="$(this).next().click()">图片转成base64</button>
+                        <input type="file" accept="image/*" hidden onchange="app.imageToBase64(this)" />
+                        <button onclick="app.base64ToImage()">base64转成图片</button>
+                    </div>
+                </div>
+                <div class="qrcode dis_n">
+                    <div class="row">
+                        <div class="column">
+                            <textarea id="qrcode_text" placeholder="请输入生成二维码字符串"></textarea>
+                        </div>
+                        <div class="column">
+                            <div id="qrcode_img"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button onclick="app.createQrcode()">二维码生成</button>
+                        <button onclick="$(this).next().click()">二维码解析</button>
+                        <input type="file" accept="image/*" hidden onchange="app.decodeQrcode(this)" />
+                    </div>
+                </div>
+                <div class="fanyi dis_n">
+                    <div class="row">
+                        <iframe id="fanyi" src="https://fanyi.baidu.com/translate?#auto/zh/"></iframe>
+                    </div>
+                </div>
+                <div class="yihuo dis_n">
+                    <div class="row">
+                        <label>转换字符　</label>
+                        <input type="text" id="yihuo_text" value="" placeholder="请输入要转换的字符" />
+                        <button onclick="app.yihuoTransform()">立即转换 >></button>
+                    </div>
+                    <div class="row">
+                        <table id="yihuo_result" border="1" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th>字符A</th>
+                                <th>字符B</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">暂无数据</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="dwz dis_n">
+                    <div class="row">
+                        <label>转换网址　</label>
+                        <input type="text" id="dwz_url" value="" placeholder="请输入要转换的网址" />
+                        <button onclick="app.createDwz(this)">转换 >></button>
+                    </div>
+                    <div class="row dis_n">
+                        <label>转换结果　</label>
+                        <input type="text" id="dwz_url_result" value="" readonly />
+                        <button id="dwz_url_copy" onclick="app.copyDwz(this)">复制 >></button>
+                    </div>
+                </div>
+                <div class="meitu dis_n">
+                    <div class="row">
+                        <webview id="meitu" src="http://xiuxiu.web.meitu.com/main.html"></webview>
+                    </div>
+                </div>
+                <div class="about dis_n">
+                    <div class="row">
+                        <label>IP地址　</label>
+                        <input type="text" id="client_ip" value="" readonly />
+                    </div>
+                    <div class="row">
+                        <label>　区域　</label>
+                        <input type="text" id="client_area" value="" readonly />
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="title">关于软件 <span>（万水千山总是情，施舍一块行不行）</span></div>
+                        <div><label>版本：</label>v1.0.1</div>
+                        <div><label>作者：</label>冬雪飘零bin</div>
+                        <div><label>微博：</label><a onclick="app.openWeibo()">https://weibo.com/2620925637</a></div>
+                        <div class="donation">
+                            <label>捐赠：</label>
+                            <img src="images/wepay.png" />
+                            <img src="images/alipay.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.qrcode.min.js"></script>
+    <script src="./js/decode.qrcode.min.js"></script>
+    <script src="./js/clipboard.min.js"></script>
+    <script src="./js/md5.min.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="js/tools.js"></script>
+</html>
+
+
+
+
+

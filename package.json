@@ -1,0 +1,31 @@
+{
+  "name": "auxiliary_tools",
+  "main": "main.html",
+  "version": "1.0.1",
+  "window": {
+    "title": "辅助工具",
+    "width": 1090,
+    "height": 600,
+    "icon": "images/icon.png",
+    "toolbar": true,
+    "position": "center",
+    "min_width": 1090,
+    "min_height": 600,
+    "resizable": false
+  },
+  "chromium-args": "--disable-devtools --ppapi-flash-path=PepperFlash/libpepflashplayer.so --ppapi-flash-version=30.0.0.134",
+  "webkit": {
+    "plugin": true
+  },
+  "description": "#### Description {**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"sudo ./install.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/drsn_bin/auxiliary_tools.git"
+  },
+  "author": "冬雪飘零bin",
+  "license": "ISC"
+}

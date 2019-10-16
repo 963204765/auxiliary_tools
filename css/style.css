@@ -1,0 +1,120 @@
+/* 样式初始化 */
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(255,0,0,0);}
+html{font-size:62.5%;}
+body{background:#EFF3F6;overflow:hidden;position:absolute;width:100%;height:100%;font-family:-apple-system,Helvetica,sans-serif;color:#363636;}
+a{text-decoration:none;color:#363636;}
+ul li,ol li,dl{list-style:none;}
+i{font-style:normal;}
+img{border:0;display:block;}
+em{font-style:normal;}
+hr{color:#1AABFF;background:#1AABFF;border:1px solid #1AABFF;}
+textarea,input{font-size:16px;}
+.dis_n{display:none !important;}
+
+.main{display:flex;}
+.main .navbar{margin:5px 10px;width:130px;position:absolute;height:100%;}
+.main .navbar li{margin:5px 0;background:#fff;text-align:center;height:40px;line-height:40px;font-size:16px;position:relative;cursor:pointer;}
+.main .navbar .active{color:#1AABFF;font-weight:600;}
+.main .navbar .active:after{content:'';display:block;width:80%;height:3px;background:#1AABFF;position:absolute;left:50%;transform:translateX(-50%);}
+.main .navbar_box{position:absolute;left:150px;right:10px;top:10px;bottom:10px;}
+.main .navbar_box > div{background:#fff;height:100%;padding:10px;box-sizing:border-box;}
+.main .navbar_box .row{padding:20px;font-size:16px;}
+.main .navbar_box .row button{cursor:pointer;}
+
+/* 时间戳 */
+.main .navbar_box .date .row input{padding:10px 6px;border:1px solid #ccc;width:200px;line-height:17px;font-size:16px;}
+.main .navbar_box .date .row button{padding:10px 16px;border:1px solid #ccc;background:#9AD82D;color:#fff;margin:0 10px;line-height:17px;font-size:16px;}
+
+/* 字符串 */
+.main .navbar_box .string .row_btn{text-align:right;}
+.main .navbar_box .string .row label{width:100px;}
+.main .navbar_box .string .row > div{width:100%;display:flex;justify-content:space-between;align-items:center;margin-top:5px;}
+.main .navbar_box .string .length > div{display:flex;}
+.main .navbar_box .string .length > div button{margin:0;}
+.main .navbar_box .string .replace > div{display:flex;}
+.main .navbar_box .string .replace > div button{margin:0;}
+.main .navbar_box .string .row textarea{padding:10px 6px;border:1px solid #ccc;width:35%;line-height:17px;font-size:16px;height:150px;resize:none;}
+.main .navbar_box .string .row input{padding:10px 6px;border:1px solid #ccc;width:65px;line-height:17px;font-size:16px;height:17px;}
+.main .navbar_box .string .row button{padding:10px 16px;border:1px solid #ccc;background:#9AD82D;color:#fff;margin:0 10px;line-height:17px;font-size:16px;}
+
+/* URL编码 */
+.main .navbar_box .url .row:nth-child(1){height:calc(100% - 119px);}
+.main .navbar_box .url .row:nth-child(2){text-align:right;}
+.main .navbar_box .url .row textarea{border:1px solid #ccc;width:100%;height:100%;padding:3px;box-sizing:border-box;resize:none;}
+.main .navbar_box .url .row button{padding:10px 12px;border:1px solid #ccc;background:#9AD82D;color:#fff;line-height:17px;font-size:16px;}
+.main .navbar_box .url .row button:first-child{margin-right:20px;}
+
+/* JSON编码 */
+.main .navbar_box .json .row:nth-child(1){height:calc(100% - 119px);}
+.main .navbar_box .json .row:nth-child(2){text-align:right;}
+.main .navbar_box .json .row textarea{border:1px solid #ccc;width:100%;height:100%;padding:3px;box-sizing:border-box;resize:none;}
+.main .navbar_box .json .row button{padding:10px 12px;border:1px solid #ccc;background:#9AD82D;color:#fff;line-height:17px;font-size:16px;}
+.main .navbar_box .json .row button:first-child{margin-right:20px;}
+
+/* MD5编码 */
+.main .navbar_box .md5 .row:nth-child(1){height:calc(100% - 119px);}
+.main .navbar_box .md5 .row:nth-child(2){text-align:right;}
+.main .navbar_box .md5 .row textarea{border:1px solid #ccc;width:100%;height:100%;padding:3px;box-sizing:border-box;resize:none;}
+.main .navbar_box .md5 .row button{padding:10px 12px;border:1px solid #ccc;background:#9AD82D;color:#fff;line-height:17px;font-size:16px;}
+
+/* Base64编码 */
+.main .navbar_box .base64 .row:nth-child(1){height:calc(100% - 119px);}
+.main .navbar_box .base64 .row:nth-child(2){text-align:right;}
+.main .navbar_box .base64 .row textarea{border:1px solid #ccc;width:100%;height:100%;padding:3px;box-sizing:border-box;resize:none;}
+.main .navbar_box .base64 .row button{padding:10px 12px;border:1px solid #ccc;background:#9AD82D;color:#fff;line-height:17px;font-size:16px;}
+.main .navbar_box .base64 .row button:first-child{margin-right:20px;}
+
+/* base64图片编码 */
+.main .navbar_box .base64_image > .row:nth-child(1){height:calc(100% - 119px);}
+.main .navbar_box .base64_image > .row:nth-child(2){text-align:right;}
+.main .navbar_box .base64_image > .row:nth-child(1){display:flex;justify-content: space-between;}
+.main .navbar_box .base64_image .row .column{height:100%;width:calc(50% - 10px);border:1px solid #ccc;box-sizing:border-box;}
+.main .navbar_box .base64_image .row .column:first-child{padding:25px;box-sizing:border-box;}
+.main .navbar_box .base64_image .row .column div{height:100%;display:flex;align-items:center;justify-content:center;}
+.main .navbar_box .base64_image .row .column div canvas{width:300px;height:300px;}
+.main .navbar_box .base64_image .row .column div img{width:300px;height:300px;}
+.main .navbar_box .base64_image .row textarea{border:none;width:100%;height:100%;padding:3px;box-sizing:border-box;resize:none;}
+.main .navbar_box .base64_image .row button{padding:10px 12px;border:1px solid #ccc;background:#9AD82D;color:#fff;line-height:17px;font-size:16px;}
+.main .navbar_box .base64_image .row button:first-child{margin-right:20px;}
+
+/* 二维码 */
+.main .navbar_box .qrcode > .row:nth-child(1){height:calc(100% - 119px);}
+.main .navbar_box .qrcode > .row:nth-child(2){text-align:right;}
+.main .navbar_box .qrcode > .row:nth-child(1){display:flex;justify-content: space-between;}
+.main .navbar_box .qrcode .row .column{height:100%;width:calc(50% - 10px);border:1px solid #ccc;box-sizing:border-box;}
+.main .navbar_box .qrcode .row .column:last-child{padding:25px;box-sizing:border-box;}
+.main .navbar_box .qrcode .row .column div{height:100%;display:flex;align-items:center;justify-content:center;}
+.main .navbar_box .qrcode .row .column div canvas{width:300px;height:300px;}
+.main .navbar_box .qrcode .row .column div img{width:300px;height:300px;}
+.main .navbar_box .qrcode .row textarea{border:none;width:100%;height:100%;padding:3px;box-sizing:border-box;resize:none;}
+.main .navbar_box .qrcode .row button{padding:10px 12px;border:1px solid #ccc;background:#9AD82D;color:#fff;line-height:17px;font-size:16px;}
+.main .navbar_box .qrcode .row button:first-child{margin-right:20px;}
+
+/* 翻译 */
+.main .navbar_box .fanyi .row{height:100%;overflow-x:hidden;overflow-y:auto;position:relative;}
+.main .navbar_box .fanyi iframe{width:100%;height:100%;border:none;min-width:1140px;position:absolute;left:50%;transform:translate(-50%,-85px);}
+
+/* 异或 */
+.main .navbar_box .yihuo .row:nth-child(2){height:calc(100% - 119px);overflow-y:auto;}
+.main .navbar_box .yihuo .row input{padding:10px 6px;border:1px solid #ccc;width:200px;line-height:17px;font-size:16px;}
+.main .navbar_box .yihuo .row button{padding:10px 16px;border:1px solid #ccc;background:#9AD82D;color:#fff;margin:0 10px;line-height:17px;font-size:16px;}
+.main .navbar_box .yihuo .row table{border-collapse:collapse;width:100%;border:1px solid #E8ECEF;margin-bottom:20px;}
+.main .navbar_box .yihuo .row table th{background:#E8ECEF;}
+.main .navbar_box .yihuo .row table td{text-align:center;}
+.main .navbar_box .yihuo .row table th,.main .navbar_box .yihuo .row table td{height:35px;border:1px solid #E8ECEF;}
+
+/* 短网址 */
+.main .navbar_box .dwz .row:nth-child(2){height:calc(100% - 119px);overflow-y:auto;}
+.main .navbar_box .dwz .row input{padding:10px 6px;border:1px solid #ccc;width:400px;line-height:17px;font-size:16px;}
+.main .navbar_box .dwz .row button{padding:10px 16px;border:1px solid #ccc;background:#9AD82D;color:#fff;margin:0 10px;line-height:17px;font-size:16px;}
+
+/* 图像处理 */
+.main .navbar_box .meitu .row{height:100%;overflow:hidden;;position:relative;}
+.main .navbar_box .meitu webview{width:100%;height:100%;border:none;}
+
+/* 关于 */
+.main .navbar_box .about .row input{padding:10px 6px;border:1px solid #ccc;width:400px;line-height:17px;font-size:16px;color:#000;}
+.main .navbar_box .about .row .title{font-size:20px;font-weight:700;margin-bottom:10px;}
+.main .navbar_box .about .row .title span{font-size:14px;color:red;}
+.main .navbar_box .about .row .donation{display:flex;}
+.main .navbar_box .about .row img{width:250px;height:250px;margin-right:20px;margin-top:6px;}

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Categories=Development;
+Icon=/opt/AuxiliaryTools/icons/desktop.png
+Exec=/opt/AuxiliaryTools/run.sh
+Name=AuxiliaryTools
+Name[zh_CN]=辅助工具
+StartupWMClass=nw
+
